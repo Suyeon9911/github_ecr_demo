@@ -1,3 +1,11 @@
+env:
+  ENV: development
+  AWS_REGION: ap-northeast-2
+  CONTAINER_NAME: container-demo2
+  ECS_CLUSTER_NAME: ecs-demo2
+  ECS_SERVICE_NAME: ecs-service-demo
+  ECR_REPOSITORY_NAME: ecr-test
+
 on:
   push:
     branches:
@@ -36,8 +44,29 @@ jobs:
           IMAGE_TAG: ${{ github. sha }}
         run: |
           # Build a docker container and push it to ECR
+          // ECR path와 image tag를 활용해서 빌드
+
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           echo "Pushing image to ECR..."
+          // ECR path와 image tag를 활용해서 push 
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
       - name: Set output
         run: echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+      
+      - name: Fill in the new image ID in the Amazon ECS task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ./task-definition.json
+          container-name: ${{ env.CONTAINER_NAME }}
+          image: ${{ steps.build-image.outputs.image }}
+
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: ${{ env.ECS_SERVICE_NAME }}
+          cluster: ${{ env.ECS_CLUSTER_NAME }}
+    
+          wait-for-service-stability: true
+      
