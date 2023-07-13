@@ -77,7 +77,7 @@ jobs:
         if: always()  # Pick up events even if the job fails or is canceled.
 
   slackNotify:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: failure()
     runs-on: ubuntu-latest
     
     steps:
