@@ -1,11 +1,11 @@
 {
-    "family": "ecs-demo-task2",
+    "family": "ecs-task",
     "containerDefinitions": [
         {
             "cpu": 1,
             "image": "352311635080.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-test",
             "memory": 512,
-            "name": "container-demo2",
+            "name": "container-test-demo",
             "portMappings": [
                 {
                     "hostPort": 0,

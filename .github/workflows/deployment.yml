@@ -2,8 +2,8 @@ env:
   ENV: development
   AWS_REGION: ap-northeast-2
   CONTAINER_NAME: container-demo2
-  ECS_CLUSTER_NAME: ecs-demo2
-  ECS_SERVICE_NAME: ecs-service-demo
+  ECS_CLUSTER_NAME: ecs-cluster-test
+  ECS_SERVICE_NAME: ecs-service
   ECR_REPOSITORY_NAME: ecr-test
 
 on:
@@ -63,6 +63,7 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE_NAME }}
           cluster: ${{ env.ECS_CLUSTER_NAME }}
+          wait-for-service-stability: true
     
       - name: Send Slack Message
         uses: 8398a7/action-slack@v3
