@@ -1,5 +1,168 @@
-.App {
-  text-align: center;
+
+.smart {
+  display: flex;
+  background-color: #333438;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+
+.smart_text {
+  padding-left: 550px;
+  color: #666666;
+  font-family: "Hanwha-R";
+  font-size: 18px;
+}
+
+.downicon {
+  padding-left: 270px;
+  width: 50px;
+  height: 40px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 요소를 두 개의 컬럼으로 나눔 */
+  grid-gap: 10px; /* 요소 사이의 간격 */
+  border-bottom: 1px solid #B5B5B5;
+}
+
+.login-container {
+  display: flex;
+  width: 300px;
+  height: 80px;
+  margin-left: 100px;
+}
+
+.login {
+  width: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+}
+
+.image-container {
+  display: flex;
+  padding-left: 100px; /* 수평 가운데 정렬 */
+  width: 370px; /* 컨테이너의 원하는 너비로 수정하세요 */
+  height: 80px; /* 컨테이너의 원하는 높이로 수정하세요 */
+}
+
+.logoimage {
+  width: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+   /* 이미지의 가로 세로 비율 유지하며 컨테이너에 맞게 조절 */
+}
+
+.quick-container {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 220px;
+  width: 150px; /* 컨테이너의 원하는 너비로 수정하세요 */
+  height: 35px; /* 컨테이너의 원하는 높이로 수정하세요 */
+}
+
+.quickmenu {
+  width: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+   /* 이미지의 가로 세로 비율 유지하며 컨테이너에 맞게 조절 */
+}
+
+
+.menu-container {
+  height: 60px;
+  border-bottom: 1px solid #B5B5B5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.id {
+  width: 190px;
+  height: 100%;
+  padding-left: 70px;
+}
+
+.menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  font-family: 'HanwhaGothicR';
+  padding-top: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.search {
+  height: 100%;
+  width: 120px;
+  padding-right: 70px;
+}
+
+.todo {
+  background-color: #A55E87;
+  height: 60px;
+  align-items: center;
+  padding-top: 15px;
+  margin-right: 0px;
+}
+
+.todotext {
+  color: white;
+  font-family: 'HanwhaGothicEL';
+  font-size: 37px;
+  padding-left: 650px;
+}
+
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-container {
+  padding-left: 200px;
+  width: 1000px;
+  height: 200px;
+  padding-bottom: 20px;
+}
+
+.main {
+  width: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+}
+
+.serve {
+  font-family: 'HanwhaGothicL';
+  font-size: 28px;
+  padding-left: 200px;
+}
+
+.side-bar {
+  padding-top: 100px;
+  width: 190px;
+  height: 330px;
+  padding-right: 130px;
+}
+
+.side {
+  width: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+  height: 100%; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+}
+
+.main-serve {
+}
+
+.separator1 {
+  display: inline-block; 
+  width:  1000px;/* 선의 너비 */
+  height: 2px; /* 선의 높이 */
+  background-color: #EEB94C; /* 선의 색상 */
+  margin-left: 200px;
+}
+
+.info {
+  width: 1000px;
+  padding-left: 200px;
 }
 
 .App-logo {
@@ -35,4 +198,56 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: "Hanwha-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("./fonts/01HanwhaB_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hanwha-R";
+  font-style: normal;
+  font-weight: regular;
+  src: url("./fonts/02HanwhaR_OTF.otf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Hanwha";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("./fonts/03HanwhaL_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "HanwhaGothicB";
+  font-style: normal;
+  src: url("./fonts/04HanwhaGothicB_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "HanwhaGothicR";
+  font-style: normal;
+  src: url("./fonts/05HanwhaGothicR_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "HanwhaGothicL";
+  font-style: normal;
+  src: url("./fonts/06HanwhaGothicL_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "HanwhaGothicEL";
+  font-style: normal;
+  src: url("./fonts/07HanwhaGothicEL_OTF.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "HanwhaGothicT";
+  font-style: normal;
+  src: url("./fonts/08HanwhaGothicT_OTF.otf") format("truetype");
 }

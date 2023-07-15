@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "Hanwha";
+    font-style: normal;
+    src: url("./01HanwhaB_OTF.eot") format("truetype");
+}
+
+@font-face {
+    font-family: "Hanwha";
+    font-style: normal;
+    font-weight: regular;
+    src: url("./02HanwhaR_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "Hanwha";
+    font-style: normal;
+    font-weight: lighter;
+    src: url("./03HanwhaL_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "HanwhaGothic";
+    font-style: normal;
+    font-weight: bold;
+    src: url("./04HanwhaGothicB_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "HanwhaGothic";
+    font-style: normal;
+    font-weight: regular;
+    src: url("./05HanwhaGothicR_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "HanwhaGothic";
+    font-style: normal;
+    font-weight: lighter;
+    src: url("./06HanwhaGothicL_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "HanwhaGothic";
+    font-style: normal;
+    font-weight: elight;
+    src: url("./07HanwhaGothicEL_OTF.eot") format("woff");
+}
+
+@font-face {
+    font-family: "HanwhaGothic";
+    font-style: normal;
+    font-weight: tiny;
+    src: url("./08HanwhaGothicT_OTF.eot") format("woff");
+}
