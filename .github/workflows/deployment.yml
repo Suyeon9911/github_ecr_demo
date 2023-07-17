@@ -78,12 +78,15 @@ jobs:
         if: always()  # Pick up events even if the job fails or is canceled.
 
   slackNotify:
-    if: failure()
+    if: ${{ always() }}
+    needs: deploy
     runs-on: ubuntu-latest
     
     steps:
       - name: Notifiy message to slack
         uses: rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ needs.deploy.result }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
