@@ -1,4 +1,9 @@
 
+.loginpage {
+  width: 100%;
+  height: 100%;
+}
+
 .smart {
   display: flex;
   background-color: #333438;
