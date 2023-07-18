@@ -77,21 +77,21 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
         if: always()  # Pick up events even if the job fails or is canceled.
   
-  # slackNotify:
-  #   if: ${{ always() }}
-  #   needs: deploy
-  #   runs-on: ubuntu-latest
+  slackNotify:
+    if: ${{ always() }}
+    needs: deploy
+    runs-on: ubuntu-latest
     
-  #   steps:
-  #     - name: Notifiy message to slack
-  #       uses: rtCamp/action-slack-notify@v2
-  #       with:
-  #         status: ${{ needs.deploy.result }}
-  #       env:
-  #         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-  #         SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
-  #         # SLACK_COLOR: ${{ job.status }} # 또는 'green', '#ff00ff' 처럼 직접 색상 지정
-  #         SLACK_USERNAME: Github CI
-  #         SLACK_ICON: https://st2.depositphotos.com/2274151/11073/v/950/depositphotos_110731914-stock-illustration-failed-red-grunge-round-vintage.jpg
-  #         SLACK_TITLE: Message
-  #         SLACK_MESSAGE: 'deploy 실패 :boom:'
+    steps:
+      - name: Notifiy message to slack
+        uses: rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ needs.deploy.result }}
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+          SLACK_COLOR: ${{ steps.Deploy.job.status }} # 또는 'green', '#ff00ff' 처럼 직접 색상 지정
+          SLACK_USERNAME: Github CI
+          SLACK_ICON: https://st2.depositphotos.com/2274151/11073/v/950/depositphotos_110731914-stock-illustration-failed-red-grunge-round-vintage.jpg
+          SLACK_TITLE: Message
+          SLACK_MESSAGE: 'deploy 실패 :boom:'
